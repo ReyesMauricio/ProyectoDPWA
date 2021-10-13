@@ -51,31 +51,24 @@ namespace ClinicaProyect_DPWA.Models
 
         //Relaciones.
         //Relacion a la tabla Medico
-        [Display(Name = "Nombre del medico")]
         public int Id_Medico { get; set; }
 
         public virtual Medico Medico { get; set; }
 
         //Relacion a la tabla paciente
-        [Display(Name = "Nombre del paciente")]
         public int Id_Paciente { get; set; }
-
-        [Required]
+        
         public virtual Paciente Paciente { get; set; }
 
         //Relaciones
         /// Relacion a la tabla EstadoReservacion
-        [Display(Name = "Estado de la reservacion")]
         public int Id_EstadoReservacion { get; set; }
 
-        [Required]
         public virtual EstadoReservacion EstadoReservacion { get; set; }
 
         //Relacion a la tabla EstadoPago
-        [Display(Name = "Estado del pago")]
         public int Id_TipoDePago { get; set; }
 
-        [Required]
         public virtual EstadoPago EstadoPago { get; set; }
     }
 }
