@@ -12,16 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.EstadoPago.EstadoDePago)
+            <label>Nombre del Doctor</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EstadoReservacion.EstadoDeCita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Medico.Nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Paciente.Nombres)
+            <label>Nombre del paciente</label>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Titulo_reservacion)
@@ -30,22 +24,10 @@
             @Html.DisplayNameFor(model => model.Nota_reservacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_creado)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Fecha_cita)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hora_cita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sintomas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Medicamentos)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Precio)
@@ -55,12 +37,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstadoPago.EstadoDePago)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstadoReservacion.EstadoDeCita)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Medico.Nombres)
         </td>
@@ -74,22 +50,10 @@
             @Html.DisplayFor(modelItem => item.Nota_reservacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_creado)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Fecha_cita)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Hora_cita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sintomas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Medicamentos)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Precio)
