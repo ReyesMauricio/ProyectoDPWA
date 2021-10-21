@@ -40,10 +40,30 @@ namespace ClinicaProyect_DPWA.Controllers
         // GET: Reservaciones/Create
         public ActionResult Create()
         {
-            ViewBag.Id_TipoDePago = new SelectList(db.EstadoPagos, "Id_TipoDePago", "EstadoDePago");
-            ViewBag.Id_EstadoReservacion = new SelectList(db.EstadoReservaciones, "Id_EstadoReservacion", "EstadoDeCita");
-            ViewBag.Id_Medico = new SelectList(db.Medicos, "Id_Medico", "Nombres");
-            ViewBag.Id_Paciente = new SelectList(db.Pacientes, "Id_Paciente", "Nombres");
+            //Modificamos la vista Create para evitar seleccionar un dato por defecto.
+            var list = db.EstadoPagos.ToList();
+            list.Add(new EstadoPago { Id_TipoDePago = 0, EstadoDePago = "[Seleccione estado de pago...]" });
+
+            list = list.OrderBy(c => c.EstadoDePago).ToList();
+            ViewBag.Id_TipoDePago = new SelectList(list, "Id_TipoDePago", "EstadoDePago");
+
+            var list1 = db.EstadoReservaciones.ToList();
+            list1.Add(new EstadoReservacion { Id_EstadoReservacion = 0, EstadoDeCita = "[Seleccione estado de cita...]" });
+
+            list1 = list1.OrderBy(c => c.Id_EstadoReservacion).ToList();
+            ViewBag.Id_EstadoReservacion = new SelectList(list1, "Id_EstadoReservacion", "EstadoDeCita");
+
+            var list2 = db.Medicos.ToList();
+            list2.Add(new Medico { Id_Medico = 0, Nombres = "[Seleccione nombre del doctor...]" });
+
+            list2 = list2.OrderBy(c => c.Id_Medico).ToList();
+            ViewBag.Id_Medico = new SelectList(list2, "Id_Medico", "Nombres");
+
+            var list3 = db.Pacientes.ToList();
+            list3.Add(new Paciente { Id_Paciente = 0, Nombres = "[Seleccione nombre del paciente...]" });
+
+            list3 = list3.OrderBy(c => c.Id_Paciente).ToList();
+            ViewBag.Id_Paciente = new SelectList(list3, "Id_Paciente", "Nombres");
             return View();
         }
 
