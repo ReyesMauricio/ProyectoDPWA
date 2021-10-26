@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.EstadoDeCita)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_EstadoReservacion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_EstadoReservacion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_EstadoReservacion })
+            @Html.ActionLink(" ", "Edit", new { id=item.Id_EstadoReservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.Id_EstadoReservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-eye-open btn btn-primary" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.Id_EstadoReservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn-danger" })
         </td>
     </tr>
 }

@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.NombreCategoria)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Categoria }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Categoria }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Categoria })
+            @Html.ActionLink(" ", "Edit", new { id=item.Id_Categoria }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.Id_Categoria }, htmlAttributes: new { @class = "glyphicon glyphicon-eye-open btn btn-primary" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.Id_Categoria }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn-danger" })
         </td>
     </tr>
 }
