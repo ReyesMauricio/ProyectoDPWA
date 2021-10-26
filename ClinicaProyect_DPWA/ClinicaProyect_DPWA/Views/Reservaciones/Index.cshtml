@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Reservacion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Reservacion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Reservacion })
+            @Html.ActionLink(" ", "Edit", new { id=item.Id_Reservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" }) |
+            @Html.ActionLink(" ", "Details", new { id=item.Id_Reservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-eye-open btn btn-primary" }) |
+            @Html.ActionLink(" ", "Delete", new { id=item.Id_Reservacion }, htmlAttributes: new { @class = "glyphicon glyphicon-trash btn btn-danger" })
         </td>
     </tr>
 }
