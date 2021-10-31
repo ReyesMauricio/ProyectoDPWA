@@ -71,6 +71,8 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.FechaNacimiento = string.Format("{0:dd/MM/yyyy}", paciente.FechaNacimiento);
+            ViewBag.Fecha_Creacion = string.Format("{0:dd/MM/yyyy}", paciente.Fecha_Creacion);
             return View(paciente);
         }
 

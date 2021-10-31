@@ -75,6 +75,8 @@ namespace ClinicaProyect_DPWA.Controllers
                 return HttpNotFound();
             }
             ViewBag.Id_Categoria = new SelectList(db.CategoriaMedicos, "Id_Categoria", "NombreCategoria", medico.Id_Categoria);
+            ViewBag.FechaNacimiento = string.Format("{0:dd/MM/yyyy}", medico.FechaNacimiento);
+            ViewBag.Fecha_Creacion = string.Format("{0:dd/MM/yyyy}", medico.Fecha_Creacion);
             return View(medico);
         }
 

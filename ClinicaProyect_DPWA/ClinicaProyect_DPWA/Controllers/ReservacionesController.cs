@@ -104,6 +104,8 @@ namespace ClinicaProyect_DPWA.Controllers
             ViewBag.Id_EstadoReservacion = new SelectList(db.EstadoReservaciones, "Id_EstadoReservacion", "EstadoDeCita", reservacion.Id_EstadoReservacion);
             ViewBag.Id_Medico = new SelectList(db.Medicos, "Id_Medico", "Nombres", reservacion.Id_Medico);
             ViewBag.Id_Paciente = new SelectList(db.Pacientes, "Id_Paciente", "Nombres", reservacion.Id_Paciente);
+            ViewBag.Fecha_cita = string.Format("{0:dd/MM/yyyy}", reservacion.Fecha_cita);
+            ViewBag.Fecha_creado = string.Format("{0:dd/MM/yyyy}", reservacion.Fecha_creado);
             return View(reservacion);
         }
 
