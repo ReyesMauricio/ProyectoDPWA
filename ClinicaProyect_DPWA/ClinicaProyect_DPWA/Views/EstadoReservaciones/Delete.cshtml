@@ -1,14 +1,14 @@
 ﻿@model ClinicaProyect_DPWA.Models.EstadoReservacion
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Borrar estado de cita";
 }
 
-<h2>Delete</h2>
+<h2>Borrar estado de cita</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Esta seguro de eliminar este estado de cita?</h3>
 <div>
-    <h4>EstadoReservacion</h4>
+    <h4>Estado de cita</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,8 +25,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, htmlAttributes: new { @class="btn btn-default" })
         </div>
     }
 </div>

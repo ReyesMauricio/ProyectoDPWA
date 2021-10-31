@@ -1,13 +1,13 @@
 ﻿@model ClinicaProyect_DPWA.Models.EstadoPago
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles de estado de pago";
 }
 
-<h2>Details</h2>
+<h2>Detalles del estado de pago</h2>
 
 <div>
-    <h4>EstadoPago</h4>
+    <h4>Estado de pago</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,6 +21,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_TipoDePago }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(" ", "Edit", new { id = Model.Id_TipoDePago }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" })
+    @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-default"})
 </p>

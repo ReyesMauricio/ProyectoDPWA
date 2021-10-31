@@ -1,10 +1,10 @@
 ﻿@model ClinicaProyect_DPWA.Models.Reservacion
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar reservaciones";
 }
 
-<h2>Edit</h2>
+<h2>Editar reservaciones</h2>
 
 
 @using (Html.BeginForm())
@@ -20,7 +20,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Titulo_reservacion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Titulo_reservacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Titulo_reservacion, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese el titulo de la reservación" } })
                 @Html.ValidationMessageFor(model => model.Titulo_reservacion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Nota_reservacion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nota_reservacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nota_reservacion, new { htmlAttributes = new { @class = "form-control" }, @placeholder="Ingrese una pequña descripción de la reservación" })
                 @Html.ValidationMessageFor(model => model.Nota_reservacion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese la dirección de la reservación" } })
                 @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Sintomas, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Sintomas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Sintomas, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese los sintomas presentado por el paciente" } })
                 @Html.ValidationMessageFor(model => model.Sintomas, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -76,7 +76,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Medicamentos, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Medicamentos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Medicamentos, new { htmlAttributes = new { @class = "form-control",  @placeholder = "Ingrese el medicamento aplicada" } })
                 @Html.ValidationMessageFor(model => model.Medicamentos, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -85,7 +85,7 @@
             @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger", @placeholder = "Ingrese el precio  de la consulta" })
             </div>
         </div>
 
@@ -123,14 +123,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Actualizar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-default" })
 </div>
 
 @section Scripts {

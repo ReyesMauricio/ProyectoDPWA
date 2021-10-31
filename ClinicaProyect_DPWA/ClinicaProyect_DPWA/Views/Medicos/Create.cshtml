@@ -1,10 +1,10 @@
 ﻿@model ClinicaProyect_DPWA.Models.Medico
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Nuevo Médico";
 }
 
-<h2>Create</h2>
+<h2>Nuevo médico</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,13 +12,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Medico</h4>
+        <h4>Formulario para el registro de médicos</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Nombres, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nombres, new { htmlAttributes = new { @class = "form-control" , @placeholder = "Ingrese el nombre del médico"} })
                 @Html.ValidationMessageFor(model => model.Nombres, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Apellidos, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Apellidos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Apellidos, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingresa el apellido del médico" } })
                 @Html.ValidationMessageFor(model => model.Apellidos, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingresa el genero m o f" } })
                 @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingresa el email de médico" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,7 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese la dirección completa del médico" } })
                 @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Movil, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Movil, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Movil, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese el número de teléfono del médico" } })
                 @Html.ValidationMessageFor(model => model.Movil, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -99,14 +99,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index", null, htmlAttributes: new { @class = "btn btn-default" })
 </div>
 
 @section Scripts {

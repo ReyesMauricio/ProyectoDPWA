@@ -1,12 +1,12 @@
 ﻿@model ClinicaProyect_DPWA.Models.Paciente
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Borrar paciente";
 }
 
-<h2>Delete</h2>
+<h2>Borrar Paciente</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Esta seguro que desea eliminar este paciente?</h3>
 <div>
     <h4>Paciente</h4>
     <hr />
@@ -89,8 +89,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, htmlAttributes: new { @class = "btn btn-default" })
         </div>
     }
 </div>

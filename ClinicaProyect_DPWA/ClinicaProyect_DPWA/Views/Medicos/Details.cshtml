@@ -1,13 +1,13 @@
 ﻿@model ClinicaProyect_DPWA.Models.Medico
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del médico";
 }
 
-<h2>Details</h2>
+<h2>Detalles del médico</h2>
 
 <div>
-    <h4>Medico</h4>
+    <h4>Médico</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -93,6 +93,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Medico }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(" ", "Edit", new { id = Model.Id_Medico }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" })
+    @Html.ActionLink("Regresar", "Index", null,htmlAttributes: new { @class = "btn btn-default" })
 </p>

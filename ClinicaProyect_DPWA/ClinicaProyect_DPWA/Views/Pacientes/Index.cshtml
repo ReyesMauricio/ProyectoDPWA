@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ClinicaProyect_DPWA.Models.Paciente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de pacientes";
 }
 
-<h2>Index</h2>
+<h2>Lista de pacientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create", null, htmlAttributes: new { @class = "btn btn-success" })
 </p>
 <table class="table">
     <tr>
