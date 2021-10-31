@@ -4,21 +4,18 @@
     ViewBag.Title = "Detalles de categorías";
 }
 
-<h2>Detalles de categoría</h2>
-
-<div>
-    <h4>Categoría</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreCategoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NombreCategoria)
-        </dd>
-
-    </dl>
+<div class="panel panel-primary" style="margin-top:3%">
+    <div class="panel-heading">@ViewBag.Title</div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="col-sm-4">
+                @Html.LabelFor(model => model.NombreCategoria)
+            </div>
+            <div class="col-sm-8">
+                @Html.EditorFor(model => model.NombreCategoria, new { htmlAttributes = new { @class = "form-control", @type = "text", @readonly = "true" } })
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink(" ", "Edit", new { id = Model.Id_Categoria }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil btn btn-success" })
