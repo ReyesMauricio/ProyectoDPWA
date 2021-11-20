@@ -15,5 +15,6 @@ namespace ClinicaProyect_DPWA.Context
         public DbSet<EstadoReservacion> EstadoReservaciones { get; set; }
         public DbSet<EstadoPago> EstadoPagos { get; set; }
         public DbSet<CategoriaMedico> CategoriaMedicos { get; set; }
+        public DbSet<Correo> Correos { get; set; }
     }
 }

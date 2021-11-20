@@ -173,6 +173,7 @@
     <Compile Include="Context\ClinicaContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriaMedicosController.cs" />
+    <Compile Include="Controllers\CorreosController.cs" />
     <Compile Include="Controllers\EstadoPagosController.cs" />
     <Compile Include="Controllers\EstadoReservacionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CategoriaMedico.cs" />
+    <Compile Include="Models\Correo.cs" />
     <Compile Include="Models\EstadoPago.cs" />
     <Compile Include="Models\EstadoReservacion.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -282,6 +284,7 @@
     <Content Include="Views\Reservaciones\Details.cshtml" />
     <Content Include="Views\Reservaciones\Edit.cshtml" />
     <Content Include="Views\Reservaciones\Index.cshtml" />
+    <Content Include="Views\Correos\EnviarCorreo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
