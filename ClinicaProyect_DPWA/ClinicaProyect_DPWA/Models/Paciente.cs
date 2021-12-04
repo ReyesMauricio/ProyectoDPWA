@@ -27,7 +27,7 @@ namespace ClinicaProyect_DPWA.Models
         public string Genero { get; set; }
 
         [Required(ErrorMessage = "El campo {0}, no puede estar vacio")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
 
@@ -52,7 +52,7 @@ namespace ClinicaProyect_DPWA.Models
         public int Edad { get { return DateTime.Now.Year - FechaNacimiento.Year; } }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha")]
         public DateTime Fecha_Creacion { get; set; }
 
