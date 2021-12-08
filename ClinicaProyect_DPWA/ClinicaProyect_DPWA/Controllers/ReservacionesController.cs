@@ -11,6 +11,7 @@ using ClinicaProyect_DPWA.Models;
 
 namespace ClinicaProyect_DPWA.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class ReservacionesController : Controller
     {
         private ClinicaContext db = new ClinicaContext();

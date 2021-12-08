@@ -11,11 +11,13 @@ using ClinicaProyect_DPWA.Models;
 
 namespace ClinicaProyect_DPWA.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class MedicosController : Controller
     {
         private ClinicaContext db = new ClinicaContext();
 
         // GET: Medicos
+        
         public ActionResult Index()
         {
             var medicos = db.Medicos.Include(m => m.CategoriaMedico);

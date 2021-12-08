@@ -54,9 +54,9 @@ namespace ClinicaProyect_DPWA
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1327259557707494",
+               appSecret: "1fa92f2216975938f73f21b46e25812f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
