@@ -19,6 +19,22 @@ namespace ClinicaProyect_DPWA.Controllers
         // GET: EstadoReservaciones
         public ActionResult Index()
         {
+            if (TempData["Accion"] != null)
+            {
+                var accion = Convert.ToString(TempData["Accion"]);
+                if (accion == "Insertado")
+                {
+                    ViewBag.Accion = "Insertado";
+                }
+                else if (accion == "Editado")
+                {
+                    ViewBag.Accion = "Editado";
+                }
+                else if (accion == "Eliminado")
+                {
+                    ViewBag.Accion = "Eliminado";
+                }
+            }
             return View(db.EstadoReservaciones.ToList());
         }
 
@@ -54,6 +70,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.EstadoReservaciones.Add(estadoReservacion);
                 db.SaveChanges();
+                TempData["Accion"] = "Insertado";
                 return RedirectToAction("Index");
             }
 
@@ -86,6 +103,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Entry(estadoReservacion).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Accion"] = "Editado";
                 return RedirectToAction("Index");
             }
             return View(estadoReservacion);
@@ -114,6 +132,7 @@ namespace ClinicaProyect_DPWA.Controllers
             EstadoReservacion estadoReservacion = db.EstadoReservaciones.Find(id);
             db.EstadoReservaciones.Remove(estadoReservacion);
             db.SaveChanges();
+            TempData["Accion"] = "Eliminado";
             return RedirectToAction("Index");
         }
 

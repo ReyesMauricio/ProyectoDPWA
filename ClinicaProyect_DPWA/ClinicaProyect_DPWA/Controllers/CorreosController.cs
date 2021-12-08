@@ -20,6 +20,7 @@ namespace ClinicaProyect_DPWA.Controllers
         // GET: Correos/Create
         public ActionResult EnviarCorreo()
         {
+            
             return View();
         }
 
@@ -30,11 +31,12 @@ namespace ClinicaProyect_DPWA.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EnviarCorreo([Bind(Include = "idCorreo,Nombres,Apellidos,Email,Numero_documento,Movil")] Correo correo)
         {
+            
             if (ModelState.IsValid)
             {
                 try
                 {
-                        //HttpPostedFile fichero;
+                    //HttpPostedFile fichero;
                     //Se adjunta en el mensaje los datos dentro de nuestro campo.
                     string mensaje = "Nombre : " + correo.Nombres + "<br> Apellido : " + correo.Apellidos + "<br> DUI: " + correo.Numero_documento + "<br> Movil: " + correo.Movil;
                     MailMessage email = new MailMessage();
@@ -68,7 +70,7 @@ namespace ClinicaProyect_DPWA.Controllers
                     smtp.Credentials = new System.Net.NetworkCredential(cuentaCorreo, passwordCorreo);
 
                     smtp.Send(email);
-                    ViewBag.Mensaje = "Mensaje enviado correctamente";
+                    ViewBag.Mensaje = "Enviado";
                 }
                 catch (ArgumentException e)
                 {

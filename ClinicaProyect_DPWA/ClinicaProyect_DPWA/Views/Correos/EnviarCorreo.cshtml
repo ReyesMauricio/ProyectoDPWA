@@ -4,7 +4,7 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+    <input type="hidden" id="txtOcultar" value="@ViewBag.Accion" />
     <div class="form-horizontal">
         <h2>Registro de cita</h2>
         <hr />
@@ -66,3 +66,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+    $(document).ready(function () {
+        if ($("#txtOcultar").val() == "Enviado") {
+            alert("asdsd");
+        }
+    });
+</script>

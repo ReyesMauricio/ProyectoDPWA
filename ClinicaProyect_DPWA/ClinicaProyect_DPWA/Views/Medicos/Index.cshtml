@@ -5,13 +5,14 @@
 }
 
 <link href="~/Content/AdminLTE.css" rel="stylesheet" />
+<input type="hidden" id="txtOcultar" value="@ViewBag.Accion" />
 <div class="box box-primary" style="margin-top:20px;">
     <div class="box-header">
         <h4 class="box-title">Listado de Medicos</h4>
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-success" name="btnCrear" id="btnCrear" onclick="Crear()">
                 <i class="fas fa-plus-square"></i> Crear Nuevo
-            </button>
+            </button>   
         </div>
     </div>
 
@@ -94,7 +95,25 @@
        
     </div>
 </div>
+<h4>@ViewBag.ex</h4>
 <script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    //function Busquedax() {
+    //    var busqueda = $("#txtBuscar").val();
+    //    alert(busqueda);
+    //}
+    $(document).ready(function () {
+        if ($("#txtOcultar").val() == "Insertado") {
+            swal("Registro Guardado!", "Datos  guardados correctamente!", "success");
+        }
+        else if ($("#txtOcultar").val() == "Editado") {
+            swal("Registro Editado!", "Datos editados correctamente!", "success");
+        }
+        else if ($("#txtOcultar").val() == "Eliminado") {
+            swal("Registro Eliminado!", "Datos  Eliminados correctamente!", "error");
+        }
+    });
+</script>
 <script>
     function Crear() {
         document.getElementById("btnCrear")

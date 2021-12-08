@@ -20,6 +20,22 @@ namespace ClinicaProyect_DPWA.Controllers
         
         public ActionResult Index()
         {
+            if (TempData["Accion"] != null)
+            {
+                var accion = Convert.ToString(TempData["Accion"]);
+                if (accion == "Insertado")
+                {
+                    ViewBag.Accion = "Insertado";
+                }
+                else if (accion == "Editado")
+                {
+                    ViewBag.Accion = "Editado";
+                }
+                else if (accion == "Eliminado")
+                {
+                    ViewBag.Accion = "Eliminado";
+                }
+            }
             var medicos = db.Medicos.Include(m => m.CategoriaMedico);
             return View(medicos.ToList());
         }
@@ -57,6 +73,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Medicos.Add(medico);
                 db.SaveChanges();
+                TempData["Accion"] = "Insertado";
                 return RedirectToAction("Index");
             }
 
@@ -93,6 +110,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Entry(medico).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Accion"] = "Editado";
                 return RedirectToAction("Index");
             }
             ViewBag.Id_Categoria = new SelectList(db.CategoriaMedicos, "Id_Categoria", "NombreCategoria", medico.Id_Categoria);
@@ -121,7 +139,17 @@ namespace ClinicaProyect_DPWA.Controllers
         {
             Medico medico = db.Medicos.Find(id);
             db.Medicos.Remove(medico);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ex = "No se puede borrar este dato porque tiene relacion con otras tablas";
+                throw;
+            }
+
+            TempData["Accion"] = "Eliminado";
             return RedirectToAction("Index");
         }
 

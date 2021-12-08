@@ -19,6 +19,23 @@ namespace ClinicaProyect_DPWA.Controllers
         // GET: Reservaciones
         public ActionResult Index()
         {
+            if (TempData["Accion"] != null)
+            {
+                var accion = Convert.ToString(TempData["Accion"]);
+                if (accion == "Insertado")
+                {
+                    ViewBag.Accion = "Insertado";
+                }
+                else if (accion == "Editado")
+                {
+                    ViewBag.Accion = "Editado";
+                }
+                else if (accion == "Eliminado")
+                {
+                    ViewBag.Accion = "Eliminado";
+                }
+            }
+
             var reservaciones = db.Reservaciones.Include(r => r.EstadoPago).Include(r => r.EstadoReservacion).Include(r => r.Medico).Include(r => r.Paciente);
             return View(reservaciones.ToList());
         }
@@ -79,6 +96,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Reservaciones.Add(reservacion);
                 db.SaveChanges();
+                TempData["Accion"] = "Insertado";
                 return RedirectToAction("Index");
             }
 
@@ -121,6 +139,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Entry(reservacion).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Accion"] = "Editado";
                 return RedirectToAction("Index");
             }
             ViewBag.Id_TipoDePago = new SelectList(db.EstadoPagos, "Id_TipoDePago", "EstadoDePago", reservacion.Id_TipoDePago);
@@ -153,6 +172,7 @@ namespace ClinicaProyect_DPWA.Controllers
             Reservacion reservacion = db.Reservaciones.Find(id);
             db.Reservaciones.Remove(reservacion);
             db.SaveChanges();
+            TempData["Accion"] = "Eliminado";
             return RedirectToAction("Index");
         }
 

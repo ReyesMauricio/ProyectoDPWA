@@ -19,6 +19,22 @@ namespace ClinicaProyect_DPWA.Controllers
         // GET: CategoriaMedicos
         public ActionResult Index()
         {
+            if (TempData["Accion"] != null)
+            {
+                var accion = Convert.ToString(TempData["Accion"]);
+                if (accion == "Insertado")
+                {
+                    ViewBag.Accion = "Insertado";
+                }
+                else if (accion == "Editado")
+                {
+                    ViewBag.Accion = "Editado";
+                }
+                else if (accion == "Eliminado")
+                {
+                    ViewBag.Accion = "Eliminado";
+                }
+            }
             return View(db.CategoriaMedicos.ToList());
         }
 
@@ -54,6 +70,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.CategoriaMedicos.Add(categoriaMedico);
                 db.SaveChanges();
+                TempData["Accion"] = "Insertado";
                 return RedirectToAction("Index");
             }
 
@@ -86,6 +103,7 @@ namespace ClinicaProyect_DPWA.Controllers
             {
                 db.Entry(categoriaMedico).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Accion"] = "Editado";
                 return RedirectToAction("Index");
             }
             return View(categoriaMedico);
@@ -114,6 +132,7 @@ namespace ClinicaProyect_DPWA.Controllers
             CategoriaMedico categoriaMedico = db.CategoriaMedicos.Find(id);
             db.CategoriaMedicos.Remove(categoriaMedico);
             db.SaveChanges();
+            TempData["Accion"] = "Eliminado";
             return RedirectToAction("Index");
         }
 
