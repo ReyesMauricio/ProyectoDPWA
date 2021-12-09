@@ -1,4 +1,10 @@
-﻿#registration-form {
+﻿body {
+    background-image: url("/img/background.jpg");
+    height: auto;
+    background-size: cover;
+}
+
+#registration-form {
     max-width: 800px;
     margin: 50px auto;
 }
@@ -73,4 +79,8 @@
         width: 100%;
         margin-top: 20px;
     }
+}
+
+footer {
+    color: white;
 }
