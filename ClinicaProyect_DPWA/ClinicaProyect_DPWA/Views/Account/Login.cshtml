@@ -3,25 +3,38 @@
 @{
     ViewBag.Title = "Iniciar sesión";
 }
+<!--<link href="~/Content/LoginRegister.css" rel="stylesheet" />-->
+<br />
+<br />
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div id="login-box">
+
+        <div class="logo">
+            <img src="~/img/background.jpg" class="img img-responsive img-circle center-block" />
+            <h1 class="logo-caption"><span class="tweak">C</span>linica <span class="tweak">B</span>elén</h1>
+        </div><!-- /.logo -->
+
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use una cuenta local para iniciar sesión.</h4>
+                <h4 class="text-center" style="color:white">Use una cuenta local para iniciar sesión.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
+                <div class="form-group" style="color: gray">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group " style="color: gray">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
@@ -30,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
+                        <div class="checkbox" style="color:gray">
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
                         </div>
@@ -38,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                        <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
                     </div>
                 </div>
                 <p>
@@ -50,14 +63,99 @@
                     </p>*@
             }
         </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
+    </div><!-- /#login-box -->
+</div><!-- /.container -->
+<div id="particles-js"></div>
+<style>
+    body, html {
+        height: 100%;
+        background-repeat: no-repeat;
+        /*background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));*/
+        background: black;
+        position: relative;
+    }
 
+    #login-box {
+        position: absolute;
+        top: 125px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 485px;
+        margin: 0 auto;
+        border: 1px solid black;
+        background: rgba(48, 46, 45, 1);
+        min-height: 250px;
+        padding: 20px;
+        z-index: 9999;
+    }
+
+        #login-box .logo .logo-caption {
+            font-family: 'Poiret One', cursive;
+            color: white;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        #login-box .logo .tweak {
+            color: #14a2c9;
+        }
+
+        #login-box .controls {
+            padding-top: 30px;
+        }
+
+            #login-box .controls input {
+                border-radius: 0px;
+                background: rgb(98, 96, 96);
+                border: 0px;
+                color: white;
+                font-family: 'Nunito', sans-serif;
+            }
+
+                #login-box .controls input:focus {
+                    box-shadow: none;
+                }
+
+                #login-box .controls input:first-child {
+                    border-top-left-radius: 2px;
+                    border-top-right-radius: 2px;
+                }
+
+                #login-box .controls input:last-child {
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                }
+
+        #login-box button.btn-custom {
+            border-radius: 2px;
+            margin-top: 8px;
+            background: #14a2c9;
+            border-color: rgba(48, 46, 45, 1);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+        }
+
+            #login-box button.btn-custom:hover {
+                -webkit-transition: all 500ms ease;
+                -moz-transition: all 500ms ease;
+                -ms-transition: all 500ms ease;
+                -o-transition: all 500ms ease;
+                transition: all 500ms ease;
+                background: rgba(48, 46, 45, 1);
+                border-color: #14a2c9;
+            }
+
+    #particles-js {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        position: fixed;
+        top: 0px;
+        z-index: 1;
+    }
+</style>
+<script src="~/Scripts/LoginRegister.js"></script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
