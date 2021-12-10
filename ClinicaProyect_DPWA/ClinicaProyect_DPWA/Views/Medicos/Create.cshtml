@@ -66,7 +66,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Movil, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Movil, new { htmlAttributes = new { @class = "form-control", @placeholder = "Ingrese el número de teléfono del médico" } })
+                @Html.EditorFor(model => model.Movil, new { htmlAttributes = new { @class = "form-control", @placeholder = "0000-0000" } })
                 @Html.ValidationMessageFor(model => model.Movil, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -113,8 +113,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-<script>
-    $(document).ready(function () {
-        $('#Movil').mask('0000-0000');
-    });
-</script>
