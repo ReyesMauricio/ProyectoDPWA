@@ -231,7 +231,6 @@ C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DP
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\obj\Debug\ClinicaProyect_DPWA.csprojAssemblyReference.cache
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\obj\Debug\ClinicaProyect_DPWA.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\obj\Debug\ClinicaProyect_DPWA.csproj.CopyComplete
 C:\Users\Mauricio\source\repos\Repositorio\ClinicaProyect_DPWA\ClinicaProyect_DPWA\obj\Debug\ClinicaProyect_DPWA.dll
