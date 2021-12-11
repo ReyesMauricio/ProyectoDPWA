@@ -67,7 +67,7 @@ namespace ClinicaProyect_DPWA.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Medico,Nombres,Apellidos,Genero,FechaNacimiento,Email,Direccion,Movil,Fecha_Creacion,IsActive,Id_Categoria")] Medico medico)
+        public ActionResult Create([Bind(Include = "Id_Medico,Nombres,Apellidos,Genero,FechaNacimiento,Email,Direccion,Movil,Fecha_Creacion,IsActive,Numero_documento,Id_Categoria")] Medico medico)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +96,8 @@ namespace ClinicaProyect_DPWA.Controllers
             ViewBag.Id_Categoria = new SelectList(db.CategoriaMedicos, "Id_Categoria", "NombreCategoria", medico.Id_Categoria);
             ViewBag.FechaNacimiento = string.Format("{0:dd/MM/yyyy}", medico.FechaNacimiento);
             ViewBag.Fecha_Creacion = string.Format("{0:dd/MM/yyyy}", medico.Fecha_Creacion);
+            ViewBag.Movil = medico.Movil;
+            ViewBag.Dui = medico.Numero_documento;
             return View(medico);
         }
 
@@ -104,7 +106,7 @@ namespace ClinicaProyect_DPWA.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Medico,Nombres,Apellidos,Genero,FechaNacimiento,Email,Direccion,Movil,Fecha_Creacion,IsActive,Id_Categoria")] Medico medico)
+        public ActionResult Edit([Bind(Include = "Id_Medico,Nombres,Apellidos,Genero,FechaNacimiento,Email,Direccion,Movil,Fecha_Creacion,IsActive,Numero_documento,Id_Categoria")] Medico medico)
         {
             if (ModelState.IsValid)
             {

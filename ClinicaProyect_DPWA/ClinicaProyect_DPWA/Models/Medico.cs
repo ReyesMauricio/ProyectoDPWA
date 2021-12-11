@@ -49,6 +49,10 @@ namespace ClinicaProyect_DPWA.Models
         [Display(Name = "Fecha creado")]
         public DateTime Fecha_Creacion { get; set; }
 
+        [Required(ErrorMessage = "El campo {0}, no puede estar vacio")]
+        [Display(Name = "Numero documento")]
+        public string Numero_documento { get; set; }
+
         [Display(Name = "Activo")]
         public bool IsActive { get; set; }
 

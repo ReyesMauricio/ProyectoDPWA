@@ -29,6 +29,7 @@ namespace ClinicaProyect_DPWA.Models
         [Required(ErrorMessage = "El campo {0}, no puede estar vacio")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
+        [Display(Name = "Fecha de nacimiento")]
         public DateTime FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El campo {0}, no puede estar vacio")]

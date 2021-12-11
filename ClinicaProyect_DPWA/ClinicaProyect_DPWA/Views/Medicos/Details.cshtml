@@ -96,6 +96,15 @@
                 @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control", @type = "text", @readonly = "true" } })
             </div>
         </div>
+        <br />
+        <div class="container">
+            <div class="col-sm-4">
+                @Html.LabelFor(model => model.Numero_documento)
+            </div>
+            <div class="col-sm-8">
+                @Html.EditorFor(model => model.Numero_documento, new { htmlAttributes = new { @class = "form-control", @type = "text", @readonly = "true" } })
+            </div>
+        </div>
     </div>
 </div>
 

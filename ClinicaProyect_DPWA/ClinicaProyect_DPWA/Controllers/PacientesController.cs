@@ -91,6 +91,7 @@ namespace ClinicaProyect_DPWA.Controllers
             }
             ViewBag.FechaNacimiento = string.Format("{0:dd/MM/yyyy}", paciente.FechaNacimiento);
             ViewBag.Fecha_Creacion = string.Format("{0:dd/MM/yyyy}", paciente.Fecha_Creacion);
+            ViewBag.Dui = paciente.Numero_documento;
             return View(paciente);
         }
 

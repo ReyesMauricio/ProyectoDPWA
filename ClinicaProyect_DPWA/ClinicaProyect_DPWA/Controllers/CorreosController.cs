@@ -37,8 +37,15 @@ namespace ClinicaProyect_DPWA.Controllers
                 try
                 {
                     //HttpPostedFile fichero;
+                    //Cuerpo del mensaje.
+                    string body = "<body>" +
+                        "<h1>Clinica Belen</h1>"+
+                        "<h4>Información Básica del paciente:</h4>"+
+                        "<span>"+"Nombre : " + correo.Nombres + "<br> Apellido : " + correo.Apellidos + "<br> DUI: " + correo.Numero_documento + "<br> Movil: " + correo.Movil
+                        + "</span>"+
+                        "</body>";
                     //Se adjunta en el mensaje los datos dentro de nuestro campo.
-                    string mensaje = "Nombre : " + correo.Nombres + "<br> Apellido : " + correo.Apellidos + "<br> DUI: " + correo.Numero_documento + "<br> Movil: " + correo.Movil;
+                    //string mensaje = "Nombre : " + correo.Nombres + "<br> Apellido : " + correo.Apellidos + "<br> DUI: " + correo.Numero_documento + "<br> Movil: " + correo.Movil;
                     MailMessage email = new MailMessage();
                     //correo de la clinica
                     email.From = new MailAddress("r3yes.mauricio@gmail.com");
@@ -46,7 +53,7 @@ namespace ClinicaProyect_DPWA.Controllers
                     email.To.Add("maury99900@gmail.com");
                     //Asunto del correo
                     email.Subject = "Datos del paciente";
-                    email.Body = mensaje;
+                    email.Body = body;
                     email.IsBodyHtml = true;
                     email.Priority = MailPriority.Normal;
 

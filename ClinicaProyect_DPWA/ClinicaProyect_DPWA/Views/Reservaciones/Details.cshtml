@@ -27,7 +27,7 @@
         <br />
         <div class="container">
             <div class="col-sm-4">
-                @Html.LabelFor(model => model.Medico.Nombres)
+                <label class="control-label">Nombre del médico</label>
             </div>
             <div class="col-sm-8">
                 @Html.EditorFor(model => model.Medico.Nombres, new { htmlAttributes = new { @class = "form-control", @type = "text", @readonly = "true" } })
@@ -36,7 +36,7 @@
         <br />
         <div class="container">
             <div class="col-sm-4">
-                @Html.LabelFor(model => model.Paciente.Nombres)
+                <label>Nombre del paciente</label>
             </div>
             <div class="col-sm-8">
                 @Html.EditorFor(model => model.Paciente.Nombres, new { htmlAttributes = new { @class = "form-control", @type = "text", @readonly = "true" } })
