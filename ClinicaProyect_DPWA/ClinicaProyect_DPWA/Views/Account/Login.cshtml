@@ -24,25 +24,25 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4 class="text-center" style="color:white">Use una cuenta local para iniciar sesión.</h4>
+                <h4 class="text-center" style="color:white">Use una cuenta local para iniciar sesión</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group" style="color: gray">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-8">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group " style="color: gray">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
+                    <div class="col-md-8">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-offset-4 col-md-8">
                         <div class="checkbox" style="color:gray">
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
@@ -50,11 +50,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-offset-4 col-md-8">
                         <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
                     </div>
                 </div>
-                <p>
+                <p >
                     @Html.ActionLink("Registrar como nuevo usuario", "Register")
                 </p>
                 @* Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
@@ -71,11 +71,13 @@
         height: 100%;
         background-repeat: no-repeat;
         /*background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));*/
-        background: black;
+        /*background: black;*/
+        background: #03000F;
         position: relative;
     }
 
     #login-box {
+        border-radius: 15px;
         position: absolute;
         top: 125px;
         left: 50%;
@@ -83,14 +85,14 @@
         width: 485px;
         margin: 0 auto;
         border: 1px solid black;
-        background: rgba(48, 46, 45, 1);
+        background: rgba(48, 46, 45, 0.8);
         min-height: 250px;
         padding: 20px;
         z-index: 9999;
     }
 
         #login-box .logo .logo-caption {
-            font-family: 'Poiret One', cursive;
+            /*font-family: 'Poiret One', cursive;*/
             color: white;
             text-align: center;
             margin-bottom: 0px;
@@ -99,51 +101,6 @@
         #login-box .logo .tweak {
             color: #14a2c9;
         }
-
-        #login-box .controls {
-            padding-top: 30px;
-        }
-
-            #login-box .controls input {
-                border-radius: 0px;
-                background: rgb(98, 96, 96);
-                border: 0px;
-                color: white;
-                font-family: 'Nunito', sans-serif;
-            }
-
-                #login-box .controls input:focus {
-                    box-shadow: none;
-                }
-
-                #login-box .controls input:first-child {
-                    border-top-left-radius: 2px;
-                    border-top-right-radius: 2px;
-                }
-
-                #login-box .controls input:last-child {
-                    border-bottom-left-radius: 2px;
-                    border-bottom-right-radius: 2px;
-                }
-
-        #login-box button.btn-custom {
-            border-radius: 2px;
-            margin-top: 8px;
-            background: #14a2c9;
-            border-color: rgba(48, 46, 45, 1);
-            color: white;
-            font-family: 'Nunito', sans-serif;
-        }
-
-            #login-box button.btn-custom:hover {
-                -webkit-transition: all 500ms ease;
-                -moz-transition: all 500ms ease;
-                -ms-transition: all 500ms ease;
-                -o-transition: all 500ms ease;
-                transition: all 500ms ease;
-                background: rgba(48, 46, 45, 1);
-                border-color: #14a2c9;
-            }
 
     #particles-js {
         width: 100%;
